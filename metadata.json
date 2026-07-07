@@ -1,0 +1,6 @@
+{
+  "name": "Tea Associates",
+  "description": "An elegant, premium artisan tea brand landing page and interactive boutique with full Arabic language support and responsive RTL/LTR layouts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
