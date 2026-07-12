@@ -123,29 +123,7 @@ export default function ActivePanelDrawer({
     }
   };
 
-  // Filter teas for Shop
-  const shopCategories = ['All', 'Black', 'Herbal'];
-  const shopCategoriesAr = ['الكل', 'أسود', 'عشبي'];
-
-  const filteredTeas = TEA_PRODUCTS.filter((tea) => {
-    if (selectedCategory === 'All') return true;
-    return tea.category === selectedCategory;
-  });
-
-  // Filter teas for Search
-  const searchedTeas = TEA_PRODUCTS.filter((tea) => {
-    const q = searchQuery.toLowerCase();
-    return (
-      tea.name.toLowerCase().includes(q) ||
-      tea.nameAr.includes(q) ||
-      tea.origin.toLowerCase().includes(q) ||
-      tea.originAr.includes(q) ||
-      tea.description.toLowerCase().includes(q) ||
-      tea.descriptionAr.includes(q) ||
-      tea.category.toLowerCase().includes(q) ||
-      tea.categoryAr.includes(q)
-    );
-  });
+ 
 
   const cartTotal = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
 
