@@ -86,77 +86,7 @@ export default function FarmsStory({ lang, onClose, onOpenPanel }: FarmsStoryPro
           </motion.div>
         </div>
       </section>
-
-      {/* SECTION 2: APOTHECARY SECTION */}
-      <section id="apothecary-section" className="relative w-full min-h-[480px] sm:min-h-[580px] flex items-center py-20 overflow-hidden">
-        
-        {/* Full-width Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={teaCupImg}
-            alt="Herbal Tea Apothecary Background"
-            className="w-full h-full object-cover scale-105"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/85 via-stone-950/70 to-stone-900/60" />
-        </div>
-
-        {/* Content Box */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 w-full">
-          <div className="max-w-3xl space-y-8 text-white">
-            
-            <motion.div
-              initial={{ opacity: 0, x: isAr ? 40 : -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-4"
-            >
-              <span className="text-teal-400 font-sans font-bold text-xs sm:text-sm uppercase tracking-widest block">
-                {isAr ? 'تراثنا القديم' : 'OUR HISTORIC HERITAGE'}
-              </span>
-              <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light tracking-wide text-white">
-                {isAr ? 'مستودع للأدوية' : 'The Living Apothecary'}
-              </h2>
-            </motion.div>
-
-            {/* Split Paragraph Layout inside Glassmorphic card for extreme readability */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white/5 backdrop-blur-md rounded-xl p-5 sm:p-6 border border-white/10 hover:border-white/20 transition-all"
-              >
-                <p className="font-sans font-light text-stone-200 text-xs sm:text-sm md:text-base leading-relaxed">
-                  {isAr 
-                    ? "المدينة المصرية القديمة 'أبوتك' اللي كانت موجودة في صعيد مصر هي اللي ألهمت فكرة مزارعنا. في اللغة المصرية القديمة، كلمة 'أبوتك' معناها 'مستودع الأدوية'. المدينة دي كانت مشهورة باستخدامها للأعشاب في الحياة اليومية العادية لقرون طويلة." 
-                    : "The ancient Egyptian city of 'Abutek' located in Upper Egypt inspired our farms' vision. In the ancient Egyptian language, 'Abutek' translates to 'apothecary' or 'medicine repository'. For centuries, this historic city was famous for integrating rich medicinal herbs into everyday life."}
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-white/5 backdrop-blur-md rounded-xl p-5 sm:p-6 border border-white/10 hover:border-white/20 transition-all"
-              >
-                <p className="font-sans font-light text-stone-200 text-xs sm:text-sm md:text-base leading-relaxed">
-                  {isAr 
-                    ? 'في مزارعنا بنستخدم أحدث التكنولوجيا الزراعية علشان ننتج أعشاب رائعة، زي الشمر الحلو، وعشب الليمون، والعرقسوس، وبلسم الليمون، والأذريون، والريحان، والكراوية، والهندباء، وقش الشوفان، والحلبة، والكزبرة، والبرسيم.' 
-                    : 'On our farms, we use state-of-the-art agricultural technology to cultivate outstanding herbs, such as sweet fennel, lemongrass, licorice, lemon balm, calendula, basil, caraway, dandelion, oat straw, fenugreek, coriander, and clover.'}
-                </p>
-              </motion.div>
-
-            </div>
-
-          </div>
-        </div>
-      </section>
-
+      
       {/* SECTION 3: YOUR NEEDS ARE WITH US */}
       <section id="wellness-needs-section" className="w-full max-w-7xl mx-auto px-4 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch rounded-2xl overflow-hidden shadow-xl border border-stone-200/50">

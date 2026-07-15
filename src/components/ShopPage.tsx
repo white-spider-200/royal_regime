@@ -102,13 +102,13 @@ export default function ShopPage({
               >
                 {/* Product Thumbnail with Hover Zoom */}
                 <div
-                  className="relative h-64 md:h-72 overflow-hidden cursor-zoom-in bg-stone-100"
+                  className="relative aspect-video w-full overflow-hidden cursor-zoom-in bg-white"
                   onClick={() => onOpenProductDetail(tea)}
                 >
                   <img
                     src={tea.image}
                     alt={isAr ? tea.nameAr : tea.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] ease-out"
+                    className="block w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-[2s] ease-out"
                     referrerPolicy="no-referrer"
                   />
                  

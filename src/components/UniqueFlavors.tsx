@@ -94,6 +94,7 @@ export default function UniqueFlavors({ lang }: UniqueFlavorsProps) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [isLeft, setIsLeft] = useState(true);
+  const [teaBagTilt, setTeaBagTilt] = useState(0);
   const isAr = lang === 'ar';
 
   const nextSlide = () => {
@@ -111,6 +112,7 @@ export default function UniqueFlavors({ lang }: UniqueFlavorsProps) {
     const rect = e.currentTarget.getBoundingClientRect();
     const relativeX = e.clientX - rect.left;
     setIsLeft(relativeX < rect.width / 2);
+    setTeaBagTilt(((relativeX / rect.width) - 0.5) * 10);
   };
 
   const handleSectionClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -293,21 +295,52 @@ export default function UniqueFlavors({ lang }: UniqueFlavorsProps) {
       dir={isAr ? 'rtl' : 'ltr'}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setTeaBagTilt(0);
+      }}
       onClick={handleSectionClick}
     >
       {/* 1. Header Portion with the hanging tea bag representation */}
       <div className="max-w-4xl mx-auto px-6 text-center space-y-6 relative z-20">
         
         {/* Hanging Tea Bag String from ceiling */}
-        <div className="flex flex-col items-center justify-center">
-          <div className="w-[1.5px] h-30 md:h-38 bg-[#8e7046]/65" />
-          <img
-            src="/src/assets/images/b7cd3927-c6a3-4da2-aa0f-3d54f9a3aa7b-removebg-preview(1).png"
-            alt="Royal Herbal Teas"
-            className="w-54 h-54"
-          />
-        </div>
+        <motion.div
+          className="flex flex-col items-center justify-center origin-top"
+          initial={{ rotate: -6 }}
+          whileInView={{ rotate: [-6, 5, -3.5, 2, -1, 0] }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{
+            duration: 2.4,
+            ease: [0.22, 1, 0.36, 1],
+            delay: 0.35,
+          }}
+        >
+          <motion.div
+            className="flex flex-col items-center origin-top"
+            animate={{ rotate: teaBagTilt }}
+            transition={{ type: 'spring', stiffness: 75, damping: 11, mass: 0.8 }}
+          >
+            <motion.div
+              className="w-[1.5px] h-30 md:h-38 bg-[#8e7046]/65 origin-top"
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            />
+            <motion.img
+              src="/src/assets/images/b7cd3927-c6a3-4da2-aa0f-3d54f9a3aa7b-removebg-preview(1).png"
+              alt="Royal Herbal Teas"
+              className="w-54 h-54 -mt-[35px]"
+              initial={{ opacity: 0, y: -18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.035 }}
+              whileTap={{ scale: 0.98 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
+            />
+          </motion.div>
+        </motion.div>
 
         {/* Brand label */}
         <span className="block text-[11px] md:text-[12.5px] uppercase tracking-[0.4em] font-sans font-semibold text-[#8e7046]/70">

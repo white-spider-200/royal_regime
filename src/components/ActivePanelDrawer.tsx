@@ -44,9 +44,27 @@ export default function ActivePanelDrawer({
 
   // Shop states
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const shopCategories = ['All', 'Black', 'Herbal'];
+  const shopCategoriesAr = ['الكل', 'أسود', 'عشبي'];
+  const filteredTeas = TEA_PRODUCTS.filter((tea) => {
+    if (selectedCategory === 'All') return true;
+    return tea.category === selectedCategory;
+  });
 
   // Search states
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const searchedTeas = TEA_PRODUCTS.filter((tea) => {
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    return (
+      tea.name.toLowerCase().includes(q) ||
+      tea.nameAr.includes(searchQuery) ||
+      tea.tagline.toLowerCase().includes(q) ||
+      tea.taglineAr.includes(searchQuery) ||
+      tea.category.toLowerCase().includes(q) ||
+      tea.categoryAr.includes(searchQuery)
+    );
+  });
 
   // Contact form states
   const [contactName, setContactName] = useState('');

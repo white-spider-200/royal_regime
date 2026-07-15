@@ -13,11 +13,11 @@ interface SustainabilityProps {
 export default function Sustainability({ lang, onClose, onOpenPanel }: SustainabilityProps) {
   const isAr = lang === 'ar';
 
-  // High-quality imagery for goals & elements
-  const goal1Img = 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200'; // Pivot/field irrigation
-  const goal2Img = 'https://images.unsplash.com/photo-1444858291040-58ea7f279a13?auto=format&fit=crop&q=80&w=1200'; // Green dates/plants
-  const goal3Img = 'https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&q=80&w=1200'; // Field workers
-  const goal4Img = 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200'; // Rustic door on yellow wall
+  // Dedicated Royal Herbs imagery for each sustainability goal
+  const goal1Img = new URL('../assets/images/2020__10__SUSTAINABLY-GOAl-1-scaled.jpg', import.meta.url).href;
+  const goal2Img = new URL('../assets/images/2020__11__Our-Responsibility-goal-2.jpg', import.meta.url).href;
+  const goal3Img = new URL('../assets/images/2020__10__Employee7.jpg', import.meta.url).href;
+  const goal4Img = new URL('../assets/images/2020__10__SUSTAINABILITY-GOAl-4-1.jpg', import.meta.url).href;
   const employeeImg = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600'; // Smiling employee
 
   return (
@@ -30,50 +30,106 @@ export default function Sustainability({ lang, onClose, onOpenPanel }: Sustainab
       exit={{ opacity: 0, y: 50 }}
       transition={{ type: 'spring', damping: 28, stiffness: 180 }}
     >
-      {/* HEADER INTRO BANNER */}
-      <section className="bg-[#eef4e2] py-16 px-6 sm:px-12 md:px-24 text-center border-b border-[#cfdfb5]">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 leading-snug"
-          >
-            {isAr ? 'استراتيجيتنا للاستدامة والتأثير' : 'Our Sustainability & Impact Strategy'}
-          </motion.h1>
+      {/* EDITORIAL SUSTAINABILITY INTRO */}
+      <section className="relative overflow-hidden border-b border-[#bdcc9f] bg-[#eef4e2] px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+        <div
+          aria-hidden="true"
+          className="absolute -right-24 -top-28 h-80 w-80 rounded-full border border-[#879866]/20 sm:h-[28rem] sm:w-[28rem]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -right-8 -top-10 h-52 w-52 rounded-full border border-[#879866]/20 sm:h-72 sm:w-72"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute bottom-0 left-[8%] h-24 w-px bg-gradient-to-t from-[#8e7046]/45 to-transparent"
+        />
 
-          <div className="h-0.5 w-24 bg-[#8e7046] mx-auto rounded-full" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+            <motion.div
+              initial={{ opacity: 0, x: isAr ? 30 : -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.75, ease: 'easeOut' }}
+              className="lg:col-span-5"
+            >
+              <div className="mb-6 flex items-center gap-3 text-[#667547]">
+                <span className="h-px w-10 bg-[#8e7046]" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.24em]">
+                  {isAr ? 'متجذّرون في المسؤولية' : 'Rooted in responsibility'}
+                </span>
+              </div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="font-sans text-stone-800 text-sm sm:text-base leading-relaxed text-justify md:text-center space-y-4 whitespace-pre-line"
-          >
-            {isAr ? (
-              <>
-                من بدايتنا كنا دايماً بنحاول نخلق مساحة من السلام والهدوء، من خلال أفضل الموارد الطبيعية مع الحفاظ على البيئة والمجتمع. نباتاتنا ومحاصيلنا بتزود غنى الحياة البرية وتجذب حيوانات جديدة وتنقي الهوا في مناطق كانت مهجورة قبل كدة. احنا كمان دايماً بنفكر في قدام ولمصلحة الأجيال اللي جاية، وإزاي نقدر تقديم لهم حاجة إيجابية عن طريق الاستخدام الصحيح للموارد الطبيعية غير المتجددة، والحفاظ على الموارد المتجددة ودعمها بحيث تبقى موارد مستدامة.
-                <br /><br />
-                وبما إن منتجاتنا بتتباع في عشرين دولة، احنا مدركين تأثيرنا على التوريد والأسواق المحلية. علشان كدة صممتنا الاستراتيجية دي علشان تساعدنا على التركيز على المناطق اللي نقدر نأثر عليها أكثر مع تحقيق رؤيتنا الخاصة بالاستدامة في المستقبل.
-                <br /><br />
-                من فهمنا وتقييمنا للتحديات اللي بنواجهها ومن خبرتنا السابقة في مبادرات مختلفة، قدرنا نحدد أربع أهداف هي أساس استراتيجيتنا.
-              </>
-            ) : (
-              <>
-                From our beginnings, we have always strived to create a space of peace and tranquility, utilizing the finest natural resources while preserving the environment and society. Our plants and crops enrich wildlife, attract new animal species, and purify the air in areas that were previously abandoned. We also always think ahead for the benefit of future generations, and how we can offer them something positive through the correct use of non-renewable natural resources, and the preservation and support of renewable resources so that they remain sustainable.
-                <br /><br />
-                Since our products are sold in twenty countries, we are aware of our impact on supply chains and local markets. That is why we designed this strategy to help us focus on the areas where we can make the greatest impact while achieving our specific vision for sustainability in the future.
-                <br /><br />
-                From our understanding and assessment of the challenges we face, and from our past experience in various initiatives, we have been able to identify four goals that form the foundation of our strategy.
-              </>
-            )}
-          </motion.p>
+              <h1 className={`max-w-xl font-serif text-4xl font-semibold text-stone-950 sm:text-5xl md:text-6xl lg:text-[4.25rem] ${isAr ? 'leading-[1.3]' : 'leading-[0.98]'}`}>
+                {isAr ? (
+                  <>استراتيجيتنا <span className="inline-block text-[#6f7f4d]">للاستدامة</span> والتأثير</>
+                ) : (
+                  <>Our <span className="italic text-[#6f7f4d]">Sustainability</span> &amp; Impact Strategy</>
+                )}
+              </h1>
+
+              <div className="mt-9 grid max-w-md grid-cols-2 border-y border-[#bdcc9f]">
+                <div className={`py-5 ${isAr ? 'pl-5' : 'pr-5'} border-[#bdcc9f] ${isAr ? 'border-l' : 'border-r'}`}>
+                  <strong className="block font-serif text-4xl font-semibold text-[#4e5e36]">20</strong>
+                  <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-600">
+                    {isAr ? 'دولة حول العالم' : 'Countries reached'}
+                  </span>
+                </div>
+                <div className={isAr ? 'pr-5 py-5' : 'pl-5 py-5'}>
+                  <strong className="block font-serif text-4xl font-semibold text-[#4e5e36]">04</strong>
+                  <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-600">
+                    {isAr ? 'أهداف أساسية' : 'Core objectives'}
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, delay: 0.18, ease: 'easeOut' }}
+              className="lg:col-span-7 lg:pt-12"
+            >
+              <p className="border-t border-[#8e7046]/45 pt-6 font-serif text-xl font-medium leading-relaxed text-stone-800 sm:text-2xl">
+                {isAr
+                  ? 'من بدايتنا كنا دايماً بنحاول نخلق مساحة من السلام والهدوء، من خلال أفضل الموارد الطبيعية مع الحفاظ على البيئة والمجتمع.'
+                  : 'From our beginnings, we have always strived to create a space of peace and tranquility—using the finest natural resources while preserving the environment and society.'}
+              </p>
+
+              <div className="mt-7 grid gap-6 text-sm leading-7 text-stone-700 sm:text-base md:grid-cols-2 md:gap-8">
+                <p>
+                  {isAr
+                    ? 'نباتاتنا ومحاصيلنا بتزود غنى الحياة البرية وتجذب حيوانات جديدة وتنقي الهوا في مناطق كانت مهجورة قبل كدة. احنا كمان دايماً بنفكر في قدام ولمصلحة الأجيال اللي جاية، وإزاي نقدر نقدم لهم حاجة إيجابية عن طريق الاستخدام الصحيح للموارد الطبيعية والحفاظ على الموارد المتجددة ودعمها.'
+                    : 'Our plants and crops enrich wildlife, attract new animal species, and purify the air in areas that were previously abandoned. We think ahead for future generations by using natural resources responsibly and protecting renewable resources.'}
+                </p>
+                <div className={`border-[#bdcc9f] ${isAr ? 'md:border-r md:pr-8' : 'md:border-l md:pl-8'}`}>
+                  <p>
+                    {isAr
+                      ? 'وبما إن منتجاتنا بتتباع في عشرين دولة، احنا مدركين تأثيرنا على التوريد والأسواق المحلية. علشان كدة صممنا الاستراتيجية دي للتركيز على المناطق اللي نقدر نأثر عليها أكثر.'
+                      : 'With products sold in twenty countries, we understand our impact on supply chains and local markets. This strategy focuses our efforts where they can create the greatest lasting change.'}
+                  </p>
+                  <p className="mt-5 font-semibold text-[#4e5e36]">
+                    {isAr
+                      ? 'ومن فهمنا للتحديات وخبرتنا السابقة، حددنا أربع أهداف تشكّل أساس استراتيجيتنا.'
+                      : 'Our understanding of these challenges has shaped four objectives—the foundation of our strategy.'}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* FOUR OBJECTIVES GRID */}
       <section id="sustainability-four-goals" className="w-full">
         {/* Goal 1 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch border-b border-stone-200">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="grid grid-cols-1 lg:grid-cols-12 items-stretch border-b border-stone-200"
+        >
           {/* Left Commitments Box - Warm Yellow */}
           <div className="lg:col-span-5 bg-[#fed25c] p-8 sm:p-12 md:p-16 flex flex-col justify-center text-stone-900">
             <div className="space-y-6">
@@ -115,10 +171,16 @@ export default function Sustainability({ lang, onClose, onOpenPanel }: Sustainab
               </h3>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Goal 2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch border-b border-stone-200">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="grid grid-cols-1 lg:grid-cols-12 items-stretch border-b border-stone-200"
+        >
           {/* Left Commitments Box - Herbal Lime Green */}
           <div className="lg:col-span-5 bg-[#c8e283] p-8 sm:p-12 md:p-16 flex flex-col justify-center text-stone-900">
             <div className="space-y-6">
@@ -162,10 +224,16 @@ export default function Sustainability({ lang, onClose, onOpenPanel }: Sustainab
               </h3>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Goal 3 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch border-b border-stone-200">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="grid grid-cols-1 lg:grid-cols-12 items-stretch border-b border-stone-200"
+        >
           {/* Left Commitments Box - Pastel Lavender Purple */}
           <div className="lg:col-span-5 bg-[#bcadcf] p-8 sm:p-12 md:p-16 flex flex-col justify-center text-stone-900">
             <div className="space-y-6">
@@ -209,10 +277,16 @@ export default function Sustainability({ lang, onClose, onOpenPanel }: Sustainab
               </h3>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Goal 4 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch border-b border-stone-200">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="grid grid-cols-1 lg:grid-cols-12 items-stretch border-b border-stone-200"
+        >
           {/* Left Commitments Box - Warm Sunset Orange */}
           <div className="lg:col-span-5 bg-[#f89a24] p-8 sm:p-12 md:p-16 flex flex-col justify-center text-stone-900">
             <div className="space-y-6">
@@ -258,7 +332,7 @@ export default function Sustainability({ lang, onClose, onOpenPanel }: Sustainab
               </h3>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* PARTNERS LOGO SECTION */}
