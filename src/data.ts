@@ -25,7 +25,7 @@ export const TEA_PRODUCTS: TeaProduct[] = [
     timeAr: '5-6 دقائق',
     rating: 4.9,
     reviews: 124,
-    image: '/src/assets/images/2024__02__Regime_Royal_Tea-front.png'
+    image: '/assets/images/2024__02__Regime_Royal_Tea-front.png'
   },
   {
     id: 'royal-evening',
@@ -46,7 +46,7 @@ export const TEA_PRODUCTS: TeaProduct[] = [
     timeAr: '5-6 دقائق',
     rating: 4.8,
     reviews: 198,
-    image: '/src/assets/images/2024__02__Royal_Evening_Tea_Chamomile.png'
+    image: '/assets/images/2024__02__Royal_Evening_Tea_Chamomile.png'
   }
 ];
 

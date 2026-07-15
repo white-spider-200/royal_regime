@@ -20,7 +20,7 @@ import ShopPage from './components/ShopPage';
 import SiteFooter from './components/SiteFooter';
 
 // Reference the generated background image as a static path
-const heroVideo = '/src/assets/videos/2022__02__Home-Intro-Compressed.mp4';
+const heroVideo = '/assets/videos/2022__02__Home-Intro-Compressed.mp4';
 
 export default function App() {
   // Global States

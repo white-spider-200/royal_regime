@@ -8,7 +8,7 @@ import { Menu, X, Search, Globe } from 'lucide-react';
 import { Language, ActivePanel } from '../types';
 import { TRANSLATIONS } from '../data';
 
-const BRAND_LOGO = '/src/assets/images/logo/2020__09__cropped-RH-favico-270x270.png';
+const BRAND_LOGO = '/assets/images/logo/2020__09__cropped-RH-favico-270x270.png';
 
 interface HeaderProps {
   lang: Language;

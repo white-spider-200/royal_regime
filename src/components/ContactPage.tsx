@@ -119,7 +119,7 @@ export default function ContactPage({ lang, onClose, onOpenPanel, cartCount }: C
   };
 
   // Flower field background image from project assets
-  const bannerImage = '/src/assets/images/chamomile_irrigation_field_1783414904690.jpg';
+  const bannerImage = '/assets/images/chamomile_irrigation_field_1783414904690.jpg';
 
   return (
     <motion.div

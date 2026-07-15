@@ -60,7 +60,7 @@ const BOX_PRODUCTS: BoxProduct[] = [
     subTitleArabic: 'أعشاب لتخفيف الوزن',
     bottomTextEnglish: 'NATURAL HERBAL TEA ... NO CAFFEINE',
     bottomTextArabic: 'شاي عشبي طبيعي ... خالٍ من الكافيين',
-    boxImage: '/src/assets/images/2024__02__Regime_Royal_Tea-front.png',
+    boxImage: '/assets/images/2024__02__Regime_Royal_Tea-front.png',
   },
   {
     id: 'royal-evening',
@@ -84,7 +84,7 @@ const BOX_PRODUCTS: BoxProduct[] = [
     subTitleArabic: 'البابونج - استرخاء وراحة',
     bottomTextEnglish: 'NATURAL HERBAL TEA - NO CAFFEINE',
     bottomTextArabic: 'شاي عشبي طبيعي - خالٍ من الكافيين',
-    boxImage: '/src/assets/images/2024__02__Royal_Evening_Tea_Chamomile.png'
+    boxImage: '/assets/images/2024__02__Royal_Evening_Tea_Chamomile.png'
   }
 ];
 
@@ -329,7 +329,7 @@ export default function UniqueFlavors({ lang }: UniqueFlavorsProps) {
               transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             />
             <motion.img
-              src="/src/assets/images/b7cd3927-c6a3-4da2-aa0f-3d54f9a3aa7b-removebg-preview(1).png"
+              src="/assets/images/b7cd3927-c6a3-4da2-aa0f-3d54f9a3aa7b-removebg-preview(1).png"
               alt="Royal Herbal Teas"
               className="w-54 h-54 -mt-[35px]"
               initial={{ opacity: 0, y: -18 }}

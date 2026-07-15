@@ -13,9 +13,9 @@ export default function FarmsStory({ lang, onClose, onOpenPanel }: FarmsStoryPro
   const isAr = lang === 'ar';
 
   // Sourced images with correct timestamps
-  const bannerImg = '/src/assets/images/farms_story_banner_1783414876355.jpg';
-  const teaCupImg = '/src/assets/images/apothecary_herbal_tea_1783414891707.jpg';
-  const fieldImg = '/src/assets/images/chamomile_irrigation_field_1783414904690.jpg';
+  const bannerImg = '/assets/images/farms_story_banner_1783414876355.jpg';
+  const teaCupImg = '/assets/images/apothecary_herbal_tea_1783414891707.jpg';
+  const fieldImg = '/assets/images/chamomile_irrigation_field_1783414904690.jpg';
 
   return (
     <motion.div

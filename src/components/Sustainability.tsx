@@ -14,10 +14,10 @@ export default function Sustainability({ lang, onClose, onOpenPanel }: Sustainab
   const isAr = lang === 'ar';
 
   // Dedicated Royal Herbs imagery for each sustainability goal
-  const goal1Img = new URL('../assets/images/2020__10__SUSTAINABLY-GOAl-1-scaled.jpg', import.meta.url).href;
-  const goal2Img = new URL('../assets/images/2020__11__Our-Responsibility-goal-2.jpg', import.meta.url).href;
-  const goal3Img = new URL('../assets/images/2020__10__Employee7.jpg', import.meta.url).href;
-  const goal4Img = new URL('../assets/images/2020__10__SUSTAINABILITY-GOAl-4-1.jpg', import.meta.url).href;
+  const goal1Img = '/assets/images/2020__10__SUSTAINABLY-GOAl-1-scaled.jpg';
+  const goal2Img = '/assets/images/2020__11__Our-Responsibility-goal-2.jpg';
+  const goal3Img = '/assets/images/2020__10__Employee7.jpg';
+  const goal4Img = '/assets/images/2020__10__SUSTAINABILITY-GOAl-4-1.jpg';
   const employeeImg = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600'; // Smiling employee
 
   return (

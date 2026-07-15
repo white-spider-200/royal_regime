@@ -5,7 +5,7 @@ export interface PartnerLogo {
   altAr: string;
 }
 
-const base = '/src/assets/images/partners';
+const base = '/assets/images/partners';
 
 export const PARTNER_LOGOS: PartnerLogo[] = [
   { id: 'eda', src: `${base}/2026__04__egyptian-drug-authority.jpeg`, alt: 'Egyptian Drug Authority', altAr: 'هيئة الدواء المصرية' },
